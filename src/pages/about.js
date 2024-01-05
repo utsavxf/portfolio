@@ -49,10 +49,10 @@ const about = () => {
                     <div className='grid w-full grid-cols-8 gap-16'>
                         <div className='col-span-3 flex flex-col items-start justify-start'>
                             <h2 className='mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75'>Biography</h2>
-                            <p className='font-medium'>Hi, I'm Utsav  Bhardwaj, a web developer  with a passion for creating beautiful, functional,
-                                and user-centered websites. With 2 years of experience in the field. I am always looking for
-                                new and innovative ways to bring my clients' visions to life.
-                            </p>
+                            <p className='font-medium'>Hi, I&apos;m Utsav Bhardwaj, a web developer with a passion for creating beautiful, functional,
+    and user-centered websites. With 2 years of experience in the field. I am always looking for
+    new and innovative ways to bring my clients&apos; visions to life.
+</p>
                             <p className='font-medium my-4'>I believe web development extends beyond code—it's about solving challenges and crafting seamless, user-centric experiences through innovation and functionality. </p>
                             {/* <p className='font-medium'> Whether I'm working on a website, mobile app, or
                                 other digital product, I bring my commitment to design excellence and user-centered thinking to

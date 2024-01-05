@@ -1,6 +1,8 @@
 import TansitionEffect from '@/components/TansitionEffect'
 import Head from 'next/head'
 import React from 'react'
+import Link from 'next/link';
+import { logoFacebook, logoTwitter, logoLinkedin, logoInstagram } from 'ionicons/icons';
 
 const contact = () => {
   return (
@@ -17,7 +19,9 @@ const contact = () => {
         <div className='bg-dark flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-4 w-full max-w-4xl p-8 rounded-xl shadow-lg text-white overflow-hidden dark:bg-light dark:text-dark '>
           <div className='flex flex-col justify-between'>
             <h1 className='font-bold text-4xl tracking-wide'>Contact Me</h1>
-            <p className='pt-2 text-primary-100 text-sm'>Feel free to get in touch with me! Whether it's about a potential collaboration, project inquiry, or just to say hello, I'd love to hear from you. Drop me a message, and I'll get back to you as soon as possible</p>
+            <p className='pt-2 text-primary-100 text-sm'>
+  Feel free to get in touch with me! Whether it&apos;s about a potential collaboration, project inquiry, or just to say hello, I&apos;d love to hear from you. Drop me a message, and I&apos;ll get back to you as soon as possible.
+</p>
          
           <div className='flex flex-col space-y-6'>
             {/* Icons */}
@@ -35,10 +39,10 @@ const contact = () => {
             </div>
           </div>
           <div className='flex space-x-4 text-lg'>
-            <a href="/"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a href="/"><ion-icon name="logo-twitter"></ion-icon></a>
-            <a href="/"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a href="/"><ion-icon name="logo-instagram"></ion-icon></a>
+          <Link href={""}><logoFacebook/></Link>
+          <Link href={""}><logoTwitter/></Link>
+          <Link href={""}><logoInstagram/></Link>
+          <Link href={""}><logoLinkedin/></Link>
           </div>
           </div>
           {/* background 2 circles */}
