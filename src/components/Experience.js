@@ -4,7 +4,7 @@ import LiIcon from './LiIcon'
 
 const Details = ({ position, company, companyLink, time, address, work }) => {
     const ref=useRef(null)
-   return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between'>
+   return <li ref={ref} className='my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]'>
         <LiIcon reference={ref}/>
         <motion.div
         initial={{y:50}}
@@ -12,11 +12,11 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         transition={{duration:0.5,type:"spring"}}
 
         >
-            <h3 className='capitalize font-bold text-2xl'>{position}&nbsp;<a href={companyLink} target='_blank' className='text-primary capitalize'>@{company}</a></h3>
-            <span className='capitalize font-medium text-dark/75 dark:text-light/75'>
+            <h3 className='capitalize font-bold text-2xl sm:text-xl xs:text-lg'>{position}&nbsp;<a href={companyLink} target='_blank' className='text-primary capitalize'>@{company}</a></h3>
+            <span className='capitalize font-medium text-dark/75 dark:text-light/75 xs:text-sm'>
                 {time}|{address}
             </span>
-            <p className='font-medium w-full'>
+            <p className='font-medium w-full md:text-sm'>
                 {work}
             </p>
         </motion.div>
@@ -37,19 +37,19 @@ const Experience = () => {
 
     return (
         <div className='my-16'>
-            <h2 className='font-bold text-8xl mb-32 w-full text-center'>
+            <h2 className='font-bold text-8xl mb-32 w-full text-center md:text-6xl xs:text-4xl md:mb-16'>
                 Experience
             </h2>
-            <div ref={ref} className='w-[75%] mx-auto relative'>
+            <div ref={ref} className='w-[75%] mx-auto relative lg:w-[90%] md:w-full'>
                {/* line waala div ,using useScroll hook to create animation*/} 
                <motion.div
                style={{scaleY:scrollYProgress}}
-                className='absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-light'
+                className='absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]'
                 />  
-                <ul className='w-full flex flex-col items-start justify-normal-between ml-4'>
+                <ul className='w-full flex flex-col items-start justify-normal-between ml-4 xs:ml-2' >
                     <Details
                         companyLink="/"
-                        position="Frontend Engineer" company=" AmityIncubator"
+                        position="Frontend Developer" company=" AmityIncubator"
                         time="2022-2023" address="Noida sec 125"
                         work="
                         I collaborated as a frontend developer, crafting websites tailored for startups, refining user interfaces, and enhancing functionalities to empower small businesses with impactful online presences"

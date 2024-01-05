@@ -10,30 +10,36 @@ import project2 from "../../public/images/projects/cine (1).png"
 import project3 from "../../public/images/projects/monkey (1).png" 
 import project4 from "../../public/images/projects/2024-01-05 (3).png" 
 import project5 from "../../public/images/projects/2024-01-05 (4).png" 
+import {motion,useScroll} from "framer-motion"
 
 import TansitionEffect from '@/components/TansitionEffect'
+const FramerImage=motion(Image);
 
 
 const FeaturedProject=({type,title,summary,img,link,github,techstack})=>{
  return(
-    <article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl dark:bg-dark dark:border-light'>
-        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl'></div>
-        <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg'>
-         <Image src={img} alt={title} className='w-full h-auto'/>
+  
+    <article className='w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative rounded-br-2xl dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded 2xl xs:rounded-br-3xl xs:p-4'>
+        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]'></div>
+        <Link href={link} target="_blank" className='w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full'>
+         <FramerImage src={img} alt={title}
+          whileHover={{scale:1.05}}
+          transition={{duration:0.2}}
+         className='w-full h-auto'/>
         </Link>
-        <div className='w-1/2 flex flex-col items-start justify-between pl-4 dark:bg-dark'>
-            <span className='text-primary font-medium text-xl dark:text-primaryDark'>{type}</span>
+        <div className='w-1/2 flex flex-col items-start justify-between pl-4 dark:bg-dark lg:w-full lg:pl-0 lg:pt-6'>
+            <span className='text-primary font-medium text-xl dark:text-primaryDark xs:text-base'>{type}</span>
             <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
-              <h2 className='my-2 w-full text-left text-4xl font-bold dark:text-light'>{title}</h2>
+              <h2 className='my-2 w-full text-left text-4xl font-bold dark:text-light sm:text-sm'>{title}</h2>
             </Link>
-            <p className='my-2 font-medium text-dark dark:text-light'>{summary}</p>
+            <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
             <div>
               <span className='font-bold  dark:text-white'>Tech Stack Used: </span>
               <span className='  dark:text-primaryDark text-primary'>{techstack}</span>
             </div>
             <div className='mt-2 flex items-center'>
             <Link className='w-10' href={github} target="_blank"><GithubIcon/> </Link>
-            <Link className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark' href={link} target="_blank">See Project</Link>
+            <Link className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:pxp-4 sm:text-base' href={link} target="_blank">See Project</Link>
             </div>
         </div>
 
@@ -44,16 +50,19 @@ const FeaturedProject=({type,title,summary,img,link,github,techstack})=>{
 const Project=({type,title,summary,img,link,github,techstack})=>{
 
  return(
-    <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark'>
-        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl'></div>
+    <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4'>
+        <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl md:-right-2 md:w-[101%] xs:h-[102%] xs:rounded-[1.5rem]'></div>
         <Link href={link} target="_blank" className='w-full cursor-pointer overflow-hidden rounded-lg'>
-         <Image src={img} alt={title} className='w-full h-auto'/>
+         <FramerImage
+           whileHover={{scale:1.05}}
+           transition={{duration:0.2}}
+         src={img} alt={title} className='w-full h-auto'/>
         </Link>
         <TansitionEffect/>
         <div className='w-full flex flex-col items-start justify-between mt-4'>
-            <span className='text-primary font-medium text-xl  dark:text-primaryDark'>{type}</span>
+            <span className='text-primary font-medium text-xl  dark:text-primaryDark lg:text-lg md:text-base'>{type}</span>
             <Link href={link} target="_blank" className='hover:underline underline-offset-2'>
-              <h2 className='my-2 w-full text-left text-3xl font-bold '>{title}</h2>
+              <h2 className='my-2 w-full text-left text-3xl font-bold lg:text-2xl '>{title}</h2>
             </Link>
             <p className='my-2 font-medium text-dark dark:text-light'>{summary}</p>
             <div>
@@ -61,8 +70,8 @@ const Project=({type,title,summary,img,link,github,techstack})=>{
               <span className='text-primary   dark:text-primaryDark'>{techstack}</span>
             </div>
             <div className=' w-full mt-2 flex items-center justify-between'>
-            <Link className='font-semibold underline' href={link} target="_blank">See</Link>   
-            <Link className='w-8' href={github} target="_blank"><GithubIcon/> </Link>
+            <Link className='font-semibold underline md:text-base' href={link} target="_blank">See</Link>   
+            <Link className='w-8 md:w-6' href={github} target="_blank"><GithubIcon/> </Link>
 
             </div>
         </div>
@@ -81,9 +90,9 @@ const projects = () => {
         </Head>
         <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
             <Layout className='pt-16'>
-                <AnimatedText text="Webcraft Repository" className='mb-16'/>
+                <AnimatedText text="Webcraft Repository" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-3xl '/>
 
-              <div className='grid grid-cols-12 gap-24 gap-y-32'>
+              <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
                 {/* FIRST WILL BE THE FEATURED PROJECT ,IT WILL TAKE ALL THE COLUMNS */}
                 <div className='col-span-12'>
                   <FeaturedProject
@@ -97,7 +106,7 @@ const projects = () => {
                   />
                 </div>
                 {/* after that we will show 2 projects side by side */}
-                <div className='col-span-6'>
+                <div className='col-span-6 sm:col-span-12'>
                 <Project
                  title="ChatSync"
                  img={project5}
@@ -108,7 +117,7 @@ const projects = () => {
                  techstack="React,Google Auth,Web Sockets"
                   />
                 </div>
-                <div className='col-span-6'>
+                <div className='col-span-6 sm:col-span-12'>
                 <Project
                  title="ShopNest"
                  img={project1}
@@ -122,7 +131,7 @@ const projects = () => {
 
                  {/* FIRST WILL BE THE FEATURED PROJECT ,IT WILL TAKE ALL THE COLUMNS */}
                 {/* after that we will show 2 projects side by side */}
-                <div className='col-span-6'>
+                <div className='col-span-6 sm:col-span-12'>
                 <Project
                  title=" CineSphere"
                  img={project2}
@@ -133,7 +142,7 @@ const projects = () => {
                  techstack="Redux ,Jwt,Material Ui"
                   />
                 </div>
-                <div className='col-span-6'>
+                <div className='col-span-6 sm:col-span-12'>
                 <Project
                  title="NewsMonkey"
                  img={project3}

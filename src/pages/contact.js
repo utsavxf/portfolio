@@ -15,7 +15,7 @@ const contact = () => {
                 <meta name="description" content='any description' />
             </Head>
             <TansitionEffect/>
-      <div className='flex w-full justify-center items-center '>
+      <div className='flex w-full justify-center items-center'>
         <div className='bg-dark flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-4 w-full max-w-4xl p-8 rounded-xl shadow-lg text-white overflow-hidden dark:bg-light dark:text-dark '>
           <div className='flex flex-col justify-between'>
             <h1 className='font-bold text-4xl tracking-wide'>Contact Me</h1>
