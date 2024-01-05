@@ -53,7 +53,7 @@ const about = () => {
     and user-centered websites. With 2 years of experience in the field. I am always looking for
     new and innovative ways to bring my clients&apos; visions to life.
 </p>
-                            <p className='font-medium my-4'>I believe web development extends beyond code—it's about solving challenges and crafting seamless, user-centric experiences through innovation and functionality. </p>
+                            <p className='font-medium my-4'>I believe web development extends beyond code—it&apos;s about solving challenges and crafting seamless, user-centric experiences through innovation and functionality. </p>
                             {/* <p className='font-medium'> Whether I'm working on a website, mobile app, or
                                 other digital product, I bring my commitment to design excellence and user-centered thinking to
                                 every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</p> */}
